@@ -8,3 +8,8 @@ The SPSS analysis includes the General Linear Model with repeated measures (???)
 All analyses follow the workflow described in the associated manuscript and are designed for reproducibility and transparency.
 
 ## Feature 
+
+## 🛠Software Requirements
+
+- **SPSS v29.0** (IBM, USA) for GLM analyses.  
+- **MATLAB R2024b** (MathWorks, USA) for regression, correlations, and curve fitting.  
