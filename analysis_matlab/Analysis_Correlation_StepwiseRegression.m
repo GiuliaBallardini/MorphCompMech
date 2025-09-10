@@ -18,6 +18,7 @@ if isequal(filename,0)
     error('No file selected. Analysis aborted.');
 else
     load(fullfile(filepath, filename));
+    disp(['Dataset selected: ',filename])
 end
 
 n_metrics = length(names);
