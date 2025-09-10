@@ -1,4 +1,4 @@
-# StatisticalAnalysis: XXX
+# StatisticalAnalysis: Hairs contain calcium-enriched capsules that control their stiffness
 
 ## Overview
 This repository contains a workflow for analyzing the morphological, compositional, and mechanical properties of hair samples, including whiskers, untreated and treated body hairs.
@@ -10,9 +10,26 @@ Full implementation details are described in the associated paper.
 
 ## Feature 
 
-
-
 ## Software Requirements
-
 - [SPSS](https://www.ibm.com/docs/en/spss-statistics/cd?topic=overview-download-installation-instructions) v29.0 (IBM, USA) for GLM analyses.  
 - [MATLAB](https://de.mathworks.com/help/install/ug/install-products-with-internet-connection.html) version R2024b (MathWorks, USA) for regression, correlations, and curve fitting.
+
+## 
+Analysis of the correlation between morphological and mechanical parameters and their reciprocal contributions
+
+## Support
+Feel free to contact us in case support is needed. Our names and contact information are listed at the bottom of this page.
+
+## Contributing
+Please feel free to contribute improvements or report issues.
+
+## Notes
+
+## Licence
+
+## Copyright
+
+## Acknowledgements
+
+## Contact
+This code repository was implemented by [Giulia Ballardini](https://github.com/GiuliaBallardini) and [Andrew K. Schulz](https://github.com/Aschulz94).
