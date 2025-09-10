@@ -9,7 +9,7 @@ All analyses follow the workflow described in the associated manuscript and are 
 
 ## Feature 
 
-## 🛠Software Requirements
+## Software Requirements
 
 - **SPSS v29.0** (IBM, USA) for GLM analyses.  
 - **MATLAB R2024b** (MathWorks, USA) for regression, correlations, and curve fitting.  
