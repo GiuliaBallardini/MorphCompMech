@@ -14,8 +14,41 @@ Full implementation details are described in the associated paper.
 - [SPSS](https://www.ibm.com/docs/en/spss-statistics/cd?topic=overview-download-installation-instructions) v29.0 (IBM, USA) for GLM analyses.  
 - [MATLAB](https://de.mathworks.com/help/install/ug/install-products-with-internet-connection.html) version R2024b (MathWorks, USA) for regression, correlations, and curve fitting.
 
-## 
-Analysis of the correlation between morphological and mechanical parameters and their reciprocal contributions
+## MATLAB Analysis Pipeline
+Run the main script ('Analysis_Correlation_StepwiseRegression.m') to perform statistical analysis and visualization of metric matrices.
+
+### Workflow
+- Dataset Selection — User interactively selects one of the .mat datasets.
+- Normality Testing — Shapiro–Wilk test on each metric.
+- Correlation Analysis — Computes Pearson correlations between all metrics.
+- Visualization — Generates heatmaps of correlation matrices.
+- Stepwise Regression — Identifies predictors for each target metric.
+
+### Usage
+1. Open MATLAB and navigate to the project folder.
+2. Run the main script: Analysis_Correlation_StepwiseRegression
+3. When prompted, select one of the provided .mat datasets (or your own dataset with the same structure).
+
+Each .mat file should contain the following variables:
+
+| Variable | Description |
+|-----------|--------------|
+| `metrics` | Cell array containing matrices (one per metric). |
+| `names`   | Internal variable names corresponding to each metric. |
+| `labels`  | Display labels for use in plots and tables. |
+
+### Included Datasets
+| Dataset | Description |
+|----------|--------------|
+| **DataFig2_Hair_Table1.mat** | Morphological (cuticle thickness, IF prevalence, hollow prevalence, CEC prevalence, Ca:S) and mechanical (elastic modulus *E*, hardness *Hc*) data of untreated body hair and whiskers. |
+| **DataFig5_Base_Table3.mat** | Mineral variables (CEC, Ca:S) and mechanical properties (*E*, *Hc*) of treated hair bases after Shindai extraction. |
+| **DataFig5_Base_Table4.mat** | Mineral variables (CEC, Ca:S) and mechanical properties (*E*, *Hc*) of treated hair tips after Shindai extraction. |
+
+## SPSS Analysis (coming soon) 
+Planned SPSS analysis files will include:
+- `.sav` datasets for statistical modeling.
+- `.spv` output files (SPSS Viewer).
+- Additional documentation to reproduce equivalent SPSS statistical analyses.
 
 ## Support
 Feel free to contact us in case support is needed. Our names and contact information are listed at the bottom of this page.
