@@ -86,9 +86,6 @@ Feel free to contact us in case support is needed. Our names and contact informa
 ## Contributing
 Contributions are welcome! Please feel free to contribute improvements or report issues.
 
-## Support
-If you need help reproducing analyses or interpreting outputs, please contact us.
-
 ## Notes
 
 ## Licence
