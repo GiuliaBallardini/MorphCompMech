@@ -86,7 +86,7 @@ If you encounter any problems or questions about specific parts of the codebase,
  > 
 > 
 ```bibtex
-@misc{bllardini_minmechstats_2025,
+@misc{ballardini_minmechstats_2025,
 	address = {minmechstats},
 	title = {StatisticalAnalysis: Hairs contain calcium-enriched capsules that control their stiffness},
 	author = {Ballardini, Giulia and Schulz, Andrew K.},
