@@ -4,7 +4,6 @@
 %   2. Computes Pearson correlations between all metrics.
 %   3. Visualizes correlation maps.
 %   4. Performs stepwise regression to identify predictors of each metric.
-% 
 % -------------------------------------------------------------------------
 
 clear
