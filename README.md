@@ -81,12 +81,31 @@ Feel free to contact us if you need support. Our names and contact information a
 Feel free to suggest improvements or report issues.
 
 ## Notes
+If you encounter any problems or questions about specific parts of the codebase, don't hesitate to raise an issue. Always provide as much context as possible.
+
+ > 
+> 
+```bibtex
+@misc{bllardini_minmechstats_2025,
+	address = {minmechstats},
+	title = {StatisticalAnalysis: Hairs contain calcium-enriched capsules that control their stiffness},
+	author = {Ballardini, Giulia and Schulz, Andrew K.},
+	howpublished = {Submitted},
+	year = {2025},
+}
+
+```
+
 
 ## Licence
+This project is licensed under the GNU GPL version 3 - see the [LICENSE](https://github.com/LawSmith408/WhiskerAnalyses/blob/main/LICENSEd) file for details.
 
 ## Copyright
 
+© 2025, Max Planck Society 
+
 ## Acknowledgements
+The authors thank the International Max Planck Research School for Intelligent Systems, [IMPRS-IS](https://imprs.is.mpg.de/) for supporting GB and AKS. We thank J. Burns and [J.-C. Passy](https://github.com/jcpassy) for their assistance in preparing the content for this GitHub. The authors thank N. Rokhmanova for her [ARIADNE repo](https://github.com/nrokh/ARIADNE) inspiring this ReadMe. Thanks to [Katherine J. Kuchenbecker](https://is.mpg.de/~kjk) for support and feedback.
 
 ## Contact
 This code repository was implemented by [Giulia Ballardini](https://github.com/GiuliaBallardini) and [Andrew K. Schulz](https://github.com/Aschulz94).
