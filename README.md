@@ -61,10 +61,10 @@ Used for GLM between different hair types and positions in the hair.
 ### Usage
 1. Open SPSS and open the `{...}_Analysis.sps`. 
 2. Run the script (press `Ctrl + A`, then `Ctrl + R`)
-3. Choose the Excel file of the data to analyze `{...}_Data.sps` via a file dialog.
+3. Choose the Excel file of the data to analyze `{...}_Data.xlsx` via a file dialog.
 4. Select an output folder for results via a file dialog.
 5. Enter the sheet names as they appear in the Excel file (comma-separated).
-6. Review results in the SPSS Viewer or in the exported PDF files.
+6. Review results saved in the SPSS Viewer or in the exported PDF files (the file will be named after the sheet name).
 
 ### Included Datasets
 | Dataset | Description | Analysis |
