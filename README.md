@@ -22,7 +22,9 @@ The full implementation details are described in the associated paper (the link 
 
 ## Variable description (TO BE CHECKED !!!!) 
 
-| Variable | Description | Type of property |
+<small><small>
+
+| Variable Names | Description | Type of property |
 |----------|--------------|--------------|
 | Thickness | Cuticule wall thickness (%) | Morphological |
 | IF |  The amount of keratine intermediate filament in the hair cortex (%) | Morphological |
@@ -31,6 +33,8 @@ The full implementation details are described in the associated paper (the link 
 | Ca:S | The amount of Calcium compared to the amount of Sulfur in different individual CEC (%) | Mineral |
 | E | Modulus of elasticity (GPa) | Mechanical |
 | Hc | Hardness (GPa) | Mechanical |
+
+</small></small>
 
 **INTERNAL NOTE** : I am using the name of the variable in the correlation tables/mat files/excel sheet's name ... but they are sligthy different from the paper: here CEC = CEC prevalence not CEC as calcium-enriched capsules .. is it ok???
 
@@ -51,10 +55,13 @@ Used for regression, correlation, and curve fitting analyses and visualization.
 3. When prompted, select one of the provided `.mat` datasets (or your own dataset with the same structure).
 
 Each `.mat` file should contain the following variables:
+
+<small><small>
+
 | Variable | Description |
 |-----------|--------------|
 | `metrics` | Cell array containing matrices (one per metric). |
-| `names`   | Internal variable names corresponding to each metric. |
+| `names`   | Internal variable names corresponding to each metric (see Table above). |
 | `labels`  | Display labels for use in plots and tables. |
 
 ### Included Datasets
@@ -63,6 +70,8 @@ Each `.mat` file should contain the following variables:
 | DataFig2_Hair_Table1.mat | Morphological (cuticle thickness, IF prevalence, hollow prevalence), mineral (CEC prevalence, Ca:S) and mechanical (E, Hc) data of untreated body hair and whiskers. |
 | DataFig5_Base_Table3.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair bases after Shindai extraction. |
 | DataFig5_Base_Table4.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair tips after Shindai extraction. |
+
+</small></small>
 
 ## Python-SPSS Analysis  
 Used for GLM between different hair types and positions in the hair.
@@ -83,19 +92,23 @@ Used for GLM between different hair types and positions in the hair.
 
 ### Factor Description and Included Dataset 
 
+<small><small>
+
 | Variable | Description | Values of variable |
 |----------|--------------|--------------|
 | Depth | Indentation contact depth (nm) | 50, 100, 200, 400, 700 |
-| HairType | Domestic cat hair type | body hair, whisker |
+| HairType | Domestic cat hair type | untreated body hair, whisker |
 | Position | Position along the hair length | base, tip |
 | Time | Shindai extraxtion time (h) | 0, 72, 120 |
-
+	
 | Dataset | Description | Analysis |
 |----------|--------------|--------------|
-| Morphological_Position_Data.xlsx | Morphological variables (thickness, CEC prevalence, Ca:S) of untreated body hair and whiskers. | Difference between hair type and position. |
+| Morphological_Position_Data.xlsx | Morphological (thickness) and mineral (CEC, Ca:S) variables of untreated body hair and whiskers. | Difference between hair type and position. |
 | Mechanical_Depth_Data.xlsx | Mechanical variables (E, Hc) from indentation of untreated body hair and whiskers. | Difference between position and depth. |
 | Mineral_Time_Analysis.xlsx | Mineral variables (CEC, Ca:S) of treated hair after Shindai extraction. | Difference between position and time. |
 | Mechanical_Time_Data.xlsx | Mechanical variables (E, Hc) from indentation of treated hair after Shindai extraction. | Difference between position, time, and depth.|
+
+</small></small>
 
 ## Support
 Feel free to contact us if you need support. Our names and contact information are listed at the bottom of this page.
