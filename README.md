@@ -49,6 +49,13 @@ Each `.mat` file should contain the following variables:
 | DataFig5_Base_Table3.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair bases after Shindai extraction. |
 | DataFig5_Base_Table4.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair tips after Shindai extraction. |
 
+## Variable description
+| Variable | Description |
+|----------|--------------|
+| CEC | etc. |
+| DataFig5_Base_Table3.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair bases after Shindai extraction. |
+| DataFig5_Base_Table4.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair tips after Shindai extraction. |
+
 ## Python-SPSS Analysis  
 Used for GLM between different hair types and positions in the hair.
 
