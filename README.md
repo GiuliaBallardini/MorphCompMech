@@ -26,7 +26,7 @@ The full implementation details are described in the associated paper (the link 
 
 | Variable Names | Description | Units | Type of property |
 |----------|--------------|--------------|--------------|
-| Thickness | Cuticule wall thickness | Percent | Morphological |
+| Thickness | Cuticule wall thickness | µm | Morphological |
 | IF |  The amount of keratin intermediate filament in the hair cortex  | Area percent | Morphological |
 | Hollow | The amount of porous hollow in the hair cortex | Area percent | Morphological |
 | CEC | The amount of calcium-enriched capsules in the hair cortex | Area percent | Mineral |
