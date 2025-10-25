@@ -32,7 +32,7 @@ The full implementation details are described in the associated paper (the link 
 | CEC | The amount of calcium-enriched capsules in the hair cortex | Area percent | Mineral |
 | Ca:S | The amount of Calcium compared to the amount of Sulfur in different individual CEC Percent | Unitless | Mineral |
 | E | Modulus of elasticity | GPa | Mechanical |
-| Hc | Hardness (GPa) | GPa | Mechanical |
+| Hc | Hardness | GPa | Mechanical |
 
 </small></small>
 
@@ -59,9 +59,9 @@ Each `.mat` file should contain the following variables:
 
 | Variable | Description |
 |-----------|--------------|
-| `metrics` | Cell array containing matrices (one per metric). |
+| `metrics` | Cell array containing the matrices. |
 | `names`   | Internal variable names corresponding to each metric (see Table above). |
-| `labels`  | Display labels for use in plots and tables. |
+| `labels`  | Labels will be displayed in the plots and tables. |
 
 ### Included Datasets
 | Dataset | Description |
