@@ -36,7 +36,7 @@ The full implementation details are described in the associated paper (the link 
 
 </small></small>
 
-In this repository we have utilized CEC as a variable name for CEC prevelence in the cortex of hair cross-sections. This is slightly different where CEC stands for calcium-enriched capsules. 
+Note: In this repository we have utilized CEC as a variable name for CEC prevelence in the cortex of hair cross-sections. This is slightly different where CEC stands for calcium-enriched capsules. 
 
 ## MATLAB Analysis Pipeline
 Used for regression, correlation, and curve fitting analyses and visualization.
