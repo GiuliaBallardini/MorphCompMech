@@ -26,8 +26,6 @@
   
 </p>
 
-
-# Statistical analysis: Hairs contain calcium-enriched capsules that control their stiffness
 Repository for quantitative analysis of hair morphology, composition, and mechanics.
 
 ## Overview
