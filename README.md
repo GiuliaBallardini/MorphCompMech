@@ -24,15 +24,15 @@ The full implementation details are described in the associated paper (the link 
 
 <small><small>
 
-| Variable Names | Description | Type of property |
-|----------|--------------|--------------|
-| Thickness | Cuticule wall thickness (%) | Morphological |
-| IF |  The amount of keratin intermediate filament in the hair cortex (%) | Morphological |
-| Hollow | The amount of porous hollow in the hair cortex (%) | Morphological |
-| CEC | The amount of calcium-enriched capsules in the hair cortex (%) | Mineral |
-| Ca:S | The amount of Calcium compared to the amount of Sulfur in different individual CEC (%) | Mineral |
-| E | Modulus of elasticity (GPa) | Mechanical |
-| Hc | Hardness (GPa) | Mechanical |
+| Variable Names | Description | Units | Type of property |
+|----------|--------------|--------------|--------------|
+| Thickness | Cuticule wall thickness (%) | Percent | Morphological |
+| IF |  The amount of keratin intermediate filament in the hair cortex (%) | Area percent | Morphological |
+| Hollow | The amount of porous hollow in the hair cortex (%) | Area percent | Morphological |
+| CEC | The amount of calcium-enriched capsules in the hair cortex (%) | Area percent | Mineral |
+| Ca:S | The amount of Calcium compared to the amount of Sulfur in different individual CEC Percent | unitless | Mineral |
+| E | Modulus of elasticity | GPa | Mechanical |
+| Hc | Hardness (GPa) | GPa | Mechanical |
 
 </small></small>
 
