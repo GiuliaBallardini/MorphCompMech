@@ -20,17 +20,17 @@ The full implementation details are described in the associated paper (the link 
         `os` - File path management
 - [MATLAB](https://de.mathworks.com/help/install/ug/install-products-with-internet-connection.html) version R2024b (MathWorks, USA) for regression, correlations, and curve fitting.
 
-## Variable description (TO BE CHECKED !!!!) 
+## Variable description  
 
 <small><small>
 
 | Variable Names | Description | Units | Type of property |
 |----------|--------------|--------------|--------------|
-| Thickness | Cuticule wall thickness (%) | Percent | Morphological |
-| IF |  The amount of keratin intermediate filament in the hair cortex (%) | Area percent | Morphological |
-| Hollow | The amount of porous hollow in the hair cortex (%) | Area percent | Morphological |
-| CEC | The amount of calcium-enriched capsules in the hair cortex (%) | Area percent | Mineral |
-| Ca:S | The amount of Calcium compared to the amount of Sulfur in different individual CEC Percent | unitless | Mineral |
+| Thickness | Cuticule wall thickness | Percent | Morphological |
+| IF |  The amount of keratin intermediate filament in the hair cortex  | Area percent | Morphological |
+| Hollow | The amount of porous hollow in the hair cortex | Area percent | Morphological |
+| CEC | The amount of calcium-enriched capsules in the hair cortex | Area percent | Mineral |
+| Ca:S | The amount of Calcium compared to the amount of Sulfur in different individual CEC Percent | Unitless | Mineral |
 | E | Modulus of elasticity | GPa | Mechanical |
 | Hc | Hardness (GPa) | GPa | Mechanical |
 
