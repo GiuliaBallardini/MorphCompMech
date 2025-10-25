@@ -36,8 +36,7 @@ The full implementation details are described in the associated paper (the link 
 
 </small></small>
 
-**INTERNAL NOTE** : I am using the name of the variable in the correlation tables/mat files/excel sheet's name ... but they are sligthy different from the paper: here CEC = CEC prevalence not CEC as calcium-enriched capsules .. is it ok???
-
+In this repository we have utilized CEC as a variable name for CEC prevelence in the cortex of hair cross-sections. This is slightly different where CEC stands for calcium-enriched capsules. 
 
 ## MATLAB Analysis Pipeline
 Used for regression, correlation, and curve fitting analyses and visualization.
