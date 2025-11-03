@@ -6,6 +6,7 @@
 %   4. Performs stepwise regression to identify predictors of each metric.
 % -------------------------------------------------------------------------
 
+close all
 clear
 clc
 
@@ -118,7 +119,9 @@ for i = 1:n_metrics
     clear predictor_idx idx mdl
 end
 
-%% End of analysis
+disp('Analysis completed')
+
+%% Save
 
 save('AnalysisResults.mat', 'results');
-disp('Analysis complete. Results saved to AnalysisResults.mat');
+disp('Results saved to AnalysisResults.mat');
