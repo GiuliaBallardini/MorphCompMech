@@ -1,8 +1,35 @@
-# StatisticalAnalysis: Hairs contain calcium-enriched capsules that control their stiffness
+
+ <h1 align="center">MinMechStats: Correlation Coefficient for Morphology-Mechanics-Minerals</h1>
+
+<p align="center">
+  <a href="https://is.mpg.de/person/ballardini"><strong>Giulia Ballardini*</strong></a> ·
+  <a href="https://hi.is.mpg.de/person/aschulz"><strong>Andrew K. Schulz*</strong></a>
+</p>
+
+<p align="center"><strong>*</strong> denotes equal contributions to this repository.</p>
+<p align="center">
+  <a href="https://arxiv.org/abs/2504.07143">
+    <img src="https://img.shields.io/badge/arXiv-Preprint-B31B1B.svg" alt="arXiv Preprint">
+	  <a href="https://doi.org/10.17617/3.ROQPWZ">
+    <img src="https://img.shields.io/badge/Data%20Repository-Edmond-005BBB.svg" alt="Edmond Repository">
+  </a>
+</p>
+ 
+ <p align="center">
+  <img src="assets/CorrFigure.png" width="100%">
+</p>
+
+
+
+
+<p align="center">
+  
+</p>
+
 Repository for quantitative analysis of hair morphology, composition, and mechanics.
 
 ## Overview
-This repository provides a comprehensive workflow for analyzing the morphological, compositional, and mechanical properties of various hair samples, including whiskers, untreated, and treated body hairs.
+This repository provides a comprehensive workflow for analyzing the morphological, compositional, and mechanical properties of various cat (*Felis catus*) hair samples, including whiskers, untreated, and chemical treated body hairs.
 
 For related data (e.g., indentation, TEM, SEM), please refer to the Edmond data repository (repository will be available upon paper acceptance). 
 
@@ -20,6 +47,24 @@ The full implementation details are described in the associated paper (the link 
         `os` - File path management
 - [MATLAB](https://de.mathworks.com/help/install/ug/install-products-with-internet-connection.html) version R2024b (MathWorks, USA) for regression, correlations, and curve fitting.
 
+## Variable description  
+
+<small><small>
+
+| Variable Names | Description | Units | Type of property |
+|----------|--------------|--------------|--------------|
+| Thickness | Cuticule wall thickness | µm | Morphological |
+| IF |  The amount of keratin intermediate filament in the hair cortex  | Area percent | Morphological |
+| Hollow | The amount of porous hollow in the hair cortex | Area percent | Morphological |
+| CEC | The amount of calcium-enriched capsules in the hair cortex | Area percent | Mineral |
+| Ca:S | The amount of Calcium compared to the amount of Sulfur in different individual CEC Percent | Unitless | Mineral |
+| E | Modulus of elasticity | GPa | Mechanical |
+| Hc | Hardness | GPa | Mechanical |
+
+</small></small>
+
+Note: In this repository we have utilized CEC as a variable name for CEC prevelence in the cortex of hair cross-sections. This is slightly different where CEC stands for calcium-enriched capsules. 
+
 ## MATLAB Analysis Pipeline
 Used for regression, correlation, and curve fitting analyses and visualization.
 
@@ -36,18 +81,25 @@ Used for regression, correlation, and curve fitting analyses and visualization.
 3. When prompted, select one of the provided `.mat` datasets (or your own dataset with the same structure).
 
 Each `.mat` file should contain the following variables:
+
+<small><small>
+
 | Variable | Description |
 |-----------|--------------|
-| `metrics` | Cell array containing matrices (one per metric). |
-| `names`   | Internal variable names corresponding to each metric. |
-| `labels`  | Display labels for use in plots and tables. |
+| `metrics` | Cell array containing the matrices. |
+| `names`   | Internal variable names corresponding to each metric (see Table above). |
+| `labels`  | Labels will be displayed in the plots and tables. |
 
 ### Included Datasets
 | Dataset | Description |
 |----------|--------------|
-| DataFig2_Hair_Table1.mat | Morphological (cuticle thickness, IF prevalence, hollow prevalence, CEC prevalence, Ca:S) and mechanical (elastic modulus: E, hardness: Hc) data of untreated body hair and whiskers. |
+| DataFig2_Hair_Table1.mat | Morphological (cuticle thickness, IF prevalence, hollow prevalence), mineral (CEC prevalence, Ca:S) and mechanical (E, Hc) data of untreated body hair and whiskers. |
 | DataFig5_Base_Table3.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair bases after Shindai extraction. |
 | DataFig5_Base_Table4.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair tips after Shindai extraction. |
+
+</small></small>
+
+All the matrices in `metrics` along with their respective `names`, are saved in the `.csv` file named Data_allTables.csv. Each of the dataset described above is saved in a separate sheet with the same name.
 
 ## Python-SPSS Analysis  
 Used for GLM between different hair types and positions in the hair.
@@ -61,18 +113,30 @@ Used for GLM between different hair types and positions in the hair.
 ### Usage
 1. Open SPSS and open the `{...}_Analysis.sps`. 
 2. Run the script (press `Ctrl + A`, then `Ctrl + R`)
-3. Choose the Excel file of the data to analyze `{...}_Data.sps` via a file dialog.
+3. Choose the Excel file of the data to analyze `{...}_Data.xlsx` via a file dialog.
 4. Select an output folder for results via a file dialog.
 5. Enter the sheet names as they appear in the Excel file (comma-separated).
-6. Review results in the SPSS Viewer or in the exported PDF files.
+6. Review results saved in the SPSS Viewer or in the exported PDF files (the file will be named after the sheet name).
 
-### Included Datasets
+### Factor Description and Included Dataset 
+
+<small><small>
+
+| Variable | Description | Values of variable |
+|----------|--------------|--------------|
+| Depth | Indentation contact depth (nm) | 50, 100, 200, 400, 700 |
+| HairType | Domestic cat hair type | untreated body hair, whisker |
+| Position | Position along the hair length | base, tip |
+| Time | Shindai extraxtion time (h) | 0, 72, 120 |
+	
 | Dataset | Description | Analysis |
 |----------|--------------|--------------|
-| Morphological_Position_Data.xlsx | Morphological variables (thickness, CEC prevalence, Ca:S) of untreated body hair and whiskers. | Difference between hair type (untreated hair vs. whisker) and position (base vs. tip). |
-| Mechanical_Depth_Data.xlsx | Mechanical variables (E, Hc) from indentation of untreated body hair and whiskers. | Difference between hair position (base vs. tip) and indentation depth (50, 100, 200, 400, 700 nm). |
-| Mineral_Time_Analysis.xlsx | Mineral variables (CEC, Ca:S) of treated hair after Shindai extraction. | Difference between hair position (base vs. tip) and extraction time (0, 72, 120 h). |
-| Mechanical_Time_Data.xlsx | Mechanical variables (E, Hc) from indentation of treated hair after Shindai extraction. | Difference between hair position (base vs. tip), extraction time (0, 72, 120 h), and indentation depth (50, 100, 200, 400, 700 nm).|
+| Morphological_Position_Data.xlsx | Morphological (thickness) and mineral (CEC, Ca:S) variables of untreated body hair and whiskers. | Difference between hair type and position. |
+| Mechanical_Depth_Data.xlsx | Mechanical variables (E, Hc) from indentation of untreated body hair and whiskers. | Difference between position and depth. |
+| Mineral_Time_Analysis.xlsx | Mineral variables (CEC, Ca:S) of treated hair after Shindai extraction. | Difference between position and time. |
+| Mechanical_Time_Data.xlsx | Mechanical variables (E, Hc) from indentation of treated hair after Shindai extraction. | Difference between position, time, and depth.|
+
+</small></small>
 
 ## Support
 Feel free to contact us if you need support. Our names and contact information are listed at the bottom of this page.
@@ -81,12 +145,31 @@ Feel free to contact us if you need support. Our names and contact information a
 Feel free to suggest improvements or report issues.
 
 ## Notes
+If you encounter any problems or questions about specific parts of the codebase, don't hesitate to raise an issue. Always provide as much context as possible.
+
+ > 
+> 
+```bibtex
+@misc{ballardini_minmechstats_2025,
+	address = {minmechstats},
+	title = {StatisticalAnalysis: Hairs contain calcium-enriched capsules that control their stiffness},
+	author = {Ballardini, Giulia and Schulz, Andrew K.},
+	howpublished = {Submitted},
+	year = {2025},
+}
+
+```
+
 
 ## Licence
+This project is licensed under the GNU GPL version 3 - see the [LICENSE](https://github.com/LawSmith408/WhiskerAnalyses/blob/main/LICENSEd) file for details.
 
 ## Copyright
 
+© 2025, Max Planck Society 
+
 ## Acknowledgements
+The authors thank the International Max Planck Research School for Intelligent Systems, [IMPRS-IS](https://imprs.is.mpg.de/) for supporting GB and AKS. We thank J. Burns and [J.-C. Passy](https://github.com/jcpassy) for their assistance in preparing the content for this GitHub. The authors thank N. Rokhmanova for her [ARIADNE repo](https://github.com/nrokh/ARIADNE) inspiring this ReadMe. Thanks to [Katherine J. Kuchenbecker](https://is.mpg.de/~kjk) for support and feedback.
 
 ## Contact
 This code repository was implemented by [Giulia Ballardini](https://github.com/GiuliaBallardini) and [Andrew K. Schulz](https://github.com/Aschulz94).
