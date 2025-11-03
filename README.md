@@ -99,6 +99,8 @@ Each `.mat` file should contain the following variables:
 
 </small></small>
 
+All the matrices in `metrics` along with their respective `names`, are saved in the `.csv` file named Data_allTables.csv. Each of the dataset described above is saved in a separate sheet with the same name.
+
 ## Python-SPSS Analysis  
 Used for GLM between different hair types and positions in the hair.
 
