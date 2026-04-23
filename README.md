@@ -77,7 +77,7 @@ Used for regression, correlation, and curve fitting analyses and visualization.
 
 ### Usage
 1. Open MATLAB and navigate to the project folder.
-2. Run the main script: `Analysis_Correlation_StepwiseRegression.mat`
+2. Run the main script: `Analysis_Bootstrap_Correlation_StepwiseRegression.mat`
 3. When prompted, select one of the provided `.mat` datasets (or your own dataset with the same structure).
 
 Each `.mat` file should contain the following variables:
