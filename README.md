@@ -2,11 +2,10 @@
  <h1 align="center">MinMechStats: Correlation Coefficient for Morphology-Mechanics-Minerals</h1>
 
 <p align="center">
-  <a href="https://is.mpg.de/person/ballardini"><strong>Giulia Ballardini*</strong></a> ·
-  <a href="https://hi.is.mpg.de/person/aschulz"><strong>Andrew K. Schulz*</strong></a>
+  <a href="https://is.mpg.de/person/ballardini"><strong>Giulia Ballardini</strong></a> ·
+  <a href="https://hi.is.mpg.de/person/aschulz"><strong>Andrew K. Schulz</strong></a>
 </p>
 
-<p align="center"><strong>*</strong> denotes equal contributions to this repository.</p>
 <p align="center">
   <a href="https://arxiv.org/abs/2504.07143">
     <img src="https://img.shields.io/badge/arXiv-Preprint-B31B1B.svg" alt="arXiv Preprint">
@@ -93,9 +92,9 @@ Each `.mat` file should contain the following variables:
 ### Included Datasets
 | Dataset | Description |
 |----------|--------------|
-| DataFig2_Hair_Table1.mat | Morphological (cuticle thickness, IF prevalence, hollow prevalence), mineral (CEC prevalence, Ca:S) and mechanical (E, Hc) data of untreated body hair and whiskers. |
+| DataFig2_Table1.mat | Morphological (cuticle thickness, IF prevalence, hollow prevalence), mineral (CEC prevalence, Ca:S) and mechanical (E, Hc) data of untreated body hair and whiskers. |
 | DataFig5_Base_Table3.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair bases after Shindai extraction. |
-| DataFig5_Base_Table4.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair tips after Shindai extraction. |
+| DataFig5_Tip_Table4.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair tips after Shindai extraction. |
 
 </small></small>
 
