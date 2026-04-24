@@ -2,11 +2,10 @@
  <h1 align="center">MinMechStats: Correlation Coefficient for Morphology-Mechanics-Minerals</h1>
 
 <p align="center">
-  <a href="https://is.mpg.de/person/ballardini"><strong>Giulia Ballardini*</strong></a> ·
-  <a href="https://hi.is.mpg.de/person/aschulz"><strong>Andrew K. Schulz*</strong></a>
+  <a href="https://is.mpg.de/person/ballardini"><strong>Giulia Ballardini</strong></a> ·
+  <a href="https://hi.is.mpg.de/person/aschulz"><strong>Andrew K. Schulz</strong></a>
 </p>
 
-<p align="center"><strong>*</strong> denotes equal contributions to this repository.</p>
 <p align="center">
   <a href="https://arxiv.org/abs/2504.07143">
     <img src="https://img.shields.io/badge/arXiv-Preprint-B31B1B.svg" alt="arXiv Preprint">
