@@ -33,7 +33,7 @@ This repository provides a comprehensive workflow for analyzing the morphologica
 For related data (e.g., indentation, TEM, SEM), please refer to the Edmond data repository (repository will be available upon paper acceptance). 
 
 This repository includes:
-- MATLAB scripts for exploring relationships among morphological, mineral, and mechanical parameters following the methods reported in [Bala et al., 2011](https://www.sciencedirect.com/science/article/pii/S1751616111001196?casa_token=Wa4RIFd3AEQAAAAA:CsA3YNd1EJQKpA7qC8L3wAs4vqLc5vrTMEiSm2WxRmY1VI6cZdz-bQvbUyiXcXCAk8CRyCcCh5Y).
+- MATLAB scripts for exploring relationships among morphological, mineral, and mechanical parameters doing a bootstrap of the methods reported in [Bala et al., 2011](https://www.sciencedirect.com/science/article/pii/S1751616111001196?casa_token=Wa4RIFd3AEQAAAAA:CsA3YNd1EJQKpA7qC8L3wAs4vqLc5vrTMEiSm2WxRmY1VI6cZdz-bQvbUyiXcXCAk8CRyCcCh5Y).
 - Python–SPSS integrated scripts for automated General Linear Model (GLM) repeated measures analyses.
 
 The full implementation details are described in the associated paper (the link will be available upon paper acceptance). 
@@ -90,15 +90,9 @@ Each `.mat` file should contain the following variables:
 | `labels`  | Labels will be displayed in the plots and tables. |
 
 ### Included Datasets
-| Dataset | Description |
-|----------|--------------|
-| DataFig2_Table1.mat | Morphological (cuticle thickness, IF prevalence, hollow prevalence), mineral (CEC prevalence, Ca:S) and mechanical (E, Hc) data of untreated body hair and whiskers. |
-| DataFig5_Base_Table3.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair bases after Shindai extraction. |
-| DataFig5_Tip_Table4.mat | Mineral variables (CEC, Ca:S) and mechanical properties (E, Hc) of treated hair tips after Shindai extraction. |
+This repository includes synthetic example files in for testing the plotting and analysis workflow without requiring access to unpublished experimental data.
 
 </small></small>
-
-All the matrices in `metrics` along with their respective `names`, are saved in the `.csv`. Each of the dataset described above is saved in a separate file with the same name.
 
 ## Python-SPSS Analysis  
 Used for GLM between different hair types and positions in the hair.
