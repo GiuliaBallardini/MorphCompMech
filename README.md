@@ -30,6 +30,8 @@ Repository for quantitative analysis of hair morphology, composition, and mechan
 ## Overview
 This repository provides a comprehensive workflow for analyzing the morphological, compositional, and mechanical properties of various cat (*Felis catus*) hair samples, including whiskers, untreated, and chemical treated body hairs.
 
+💡 Tip: You can switch between [Light and Dark mode](https://github.com/settings/appearance) in your GitHub profile settings for better readability. This repo is designed to be viewed in Light mode.
+
 For related data (e.g., indentation, TEM, SEM), please refer to the Edmond data repository (repository will be available upon paper acceptance). 
 
 This repository includes:
