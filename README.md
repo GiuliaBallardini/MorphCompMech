@@ -163,6 +163,8 @@ This project is licensed under the GNU GPL version 3 - see the [LICENSE](https:/
 
 © 2026, Max Planck Society 
 
+Authors: Giulia Ballardini, Andrew K. Schulz
+
 ## Acknowledgements
 The authors thank the International Max Planck Research School for Intelligent Systems, [IMPRS-IS](https://imprs.is.mpg.de/) for supporting GB and AKS. We thank J. Burns and [J.-C. Passy](https://github.com/jcpassy) for their assistance in preparing the content for this GitHub. The authors thank N. Rokhmanova for her [ARIADNE repo](https://github.com/nrokh/ARIADNE) inspiring this ReadMe. Thanks to [Katherine J. Kuchenbecker](https://is.mpg.de/~kjk) for support and feedback.
 
