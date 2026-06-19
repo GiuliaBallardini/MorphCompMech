@@ -165,8 +165,8 @@ If you encounter any problems or questions about specific parts of the codebase,
 	address = {minmechstats},
 	title = {StatisticalAnalysis: Hairs contain calcium-enriched capsules that control their stiffness},
 	author = {Ballardini, Giulia and Schulz, Andrew K.},
-	howpublished = {Submitted},
-	year = {2025},
+	howpublished = {In preperation},
+	year = {2026},
 }
 
 ```
