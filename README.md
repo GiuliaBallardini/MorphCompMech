@@ -28,11 +28,17 @@
 Repository for quantitative analysis of hair morphology, composition, and mechanics.
 
 ## Overview
-This repository provides a comprehensive workflow for analyzing the morphological, compositional, and mechanical properties of various cat (*Felis catus*) hair samples, including whiskers, untreated, and chemical treated body hairs.
+This repository provides a reproducible workflow for the quantitative analysis of morphological, compositional, and mechanical properties of cat (Felis catus) hair, including whiskers, untreated body hair, and chemically treated body hair.
+
+The implementation supports the statistical analyses described in the associated manuscript, including generalized linear models (GLMs), non-parametric bootstrap resampling, correlation analysis, and stepwise regression with bootstrap inclusion frequency (BIF).
 
 💡 Tip: You can switch between [Light and Dark mode](https://github.com/settings/appearance) in your GitHub profile settings for better readability. This repo is designed to be viewed in Light mode.
 
-For related data (e.g., indentation, TEM, SEM), please refer to the Edmond data repository (repository will be available upon paper acceptance). 
+## Data
+
+Related datasets (indentation, TEM, SEM, and chemical composition) are available via the Edmond data repository (link provided upon publication).
+
+This repository additionally includes synthetic datasets for reproducibility and testing of the full analysis pipeline without requiring access to unpublished experimental data.
 
 This repository includes:
 - MATLAB scripts for exploring relationships among morphological, mineral, and mechanical parameters doing a bootstrap of the methods reported in [Bala et al., 2011](https://www.sciencedirect.com/science/article/pii/S1751616111001196?casa_token=Wa4RIFd3AEQAAAAA:CsA3YNd1EJQKpA7qC8L3wAs4vqLc5vrTMEiSm2WxRmY1VI6cZdz-bQvbUyiXcXCAk8CRyCcCh5Y).
@@ -67,19 +73,21 @@ The full implementation details are described in the associated paper (the link 
 Note: In this repository we have utilized CEC as a variable name for CEC prevelence in the cortex of hair cross-sections. This is slightly different where CEC stands for calcium-enriched capsules. 
 
 ## MATLAB Analysis Pipeline
-Used for regression, correlation, and curve fitting analyses and visualization.
+Analyses quantify relationships among morphological, compositional, and mechanical variables across hair type (body hair, whisker) and location (base, tip).
 
 ### Workflow
-- Dataset Selection — User interactively selects one of the `.mat` datasets.
-- Normality Testing — Shapiro–Wilk test on each metric.
-- Correlation Analysis — Computes Pearson correlations between all metrics.
-- Visualization — Generates heatmaps of correlation matrices.
-- Stepwise Regression — Identifies predictors for each target metric.
+- Dataset selection — User interactively selects one of the `.mat` datasets.
+- Normality testing — Shapiro–Wilk tests are applied to each metric.
+- Bootstrap correlation analysis — Pearson correlation coefficients are computed across 5,000 bootstrap resamples (sampling with replacement). Final correlation values are defined as the median of the bootstrap distribution.
+- Visualization — Correlation matrices are visualized as heatmaps.
+- Stepwise regression — Bidirectional stepwise linear regression is performed within each bootstrap iteration.
+- Predictor stability — Predictor importance is quantified using Bootstrap Inclusion Frequency (BIF), defined as the proportion of bootstrap iterations in which a predictor is retained.
 
 ### Usage
-1. Open MATLAB and navigate to the project folder.
-2. Run the main script: `Analysis_Bootstrap_Correlation_StepwiseRegression.mat`
-3. When prompted, select one of the provided `.mat` datasets (or your own dataset with the same structure).
+1. Open MATLAB.
+2. Navigate to the repository directory
+3. Run the main script: `Analysis_Bootstrap_Correlation_StepwiseRegression.mat`
+4. Select a `.mat` dataset when prompted.
 
 Each `.mat` file should contain the following variables:
 
@@ -97,13 +105,13 @@ This repository includes synthetic example files in for testing the plotting and
 </small></small>
 
 ## Python-SPSS Analysis  
-Used for GLM between different hair types and positions in the hair.
+General Linear Models evaluate differences across hair type, location, depth, and extraction time depending on dataset structure.
 
 ### Workflow
-- Data Selection — Select the `.xlsx` file to analyze. 
-- Sheet Selection — Enter names of sheets for analysis.
-- Automated GLM Analysis — Repeated measures run per sheet.
-- Output Generation — Results exported as `.spv` (SPSS Viewer) and `.pdf` files in a selected folder.
+- Data selection — Select the `.xlsx` file to analyze. 
+- Sheet selection — Enter names of sheets for analysis.
+- Automated GLM analysis — Repeated measures run per sheet.
+- Output generation — Results exported as `.spv` (SPSS Viewer) and `.pdf` files in a selected folder.
 
 ### Usage
 1. Open SPSS and open the `{...}_Analysis.sps`. 
