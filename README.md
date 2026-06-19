@@ -1,5 +1,5 @@
 
- <h1 align="center">MinMechStats: Correlation Coefficient for Morphology-Mechanics-Minerals</h1>
+ <h1 align="center">MinMechStats: Correlation Coefficient for Morphology-Mechanics-Elements</h1>
 
 <p align="center">
   <a href="https://is.mpg.de/person/ballardini"><strong>Giulia Ballardini</strong></a> ·
@@ -34,7 +34,7 @@ Related datasets (indentation, TEM, SEM, and chemical composition) are available
 This repository additionally includes synthetic datasets for reproducibility and testing of the full analysis pipeline without requiring access to unpublished experimental data.
 
 This repository includes:
-- MATLAB scripts for exploring relationships among morphological, mineral, and mechanical parameters doing a bootstrap of the methods reported in [Bala et al., 2011](https://www.sciencedirect.com/science/article/pii/S1751616111001196?casa_token=Wa4RIFd3AEQAAAAA:CsA3YNd1EJQKpA7qC8L3wAs4vqLc5vrTMEiSm2WxRmY1VI6cZdz-bQvbUyiXcXCAk8CRyCcCh5Y).
+- MATLAB scripts for exploring relationships among morphological, compositional, and mechanical parameters doing a bootstrap of the methods reported in [Bala et al., 2011](https://www.sciencedirect.com/science/article/pii/S1751616111001196?casa_token=Wa4RIFd3AEQAAAAA:CsA3YNd1EJQKpA7qC8L3wAs4vqLc5vrTMEiSm2WxRmY1VI6cZdz-bQvbUyiXcXCAk8CRyCcCh5Y).
 - Python–SPSS integrated scripts for automated General Linear Model (GLM) repeated measures analyses.
 
 The full implementation details are described in the associated paper (the link will be available upon paper acceptance). 
@@ -142,9 +142,9 @@ Analyses evaluate differences across hair type, location, depth, and extraction 
 	
 | Dataset | Description | Analysis |
 |----------|--------------|--------------|
-| Morphological_Position_SampleData.xlsx | Morphological (thickness) and mineral (CEC, Ca:S) variables of untreated body hair and whiskers. | Difference between hair type and position. |
+| Morphological_Position_SampleData.xlsx | Morphological (thickness) and calcium-enrichment (CEC, Ca:S) variables of untreated body hair and whiskers. | Difference between hair type and position. |
 | Mechanical_Depth_SampleData.xlsx | Mechanical variables (E, Hc) from indentation of untreated body hair and whiskers. | Difference between position and depth. |
-| Mineral_Time_SampleData.xlsx | Mineral variables (CEC, Ca:S) of treated hair after Shindai extraction. | Difference between position and time. |
+| Mineral_Time_SampleData.xlsx | Calcium-enrichment variables (CEC, Ca:S) of treated hair after Shindai extraction. | Difference between position and time. |
 | Mechanical_Time_SampleData.xlsx | Mechanical variables (E, Hc) from indentation of treated hair after Shindai extraction. | Difference between position, time, and depth.|
 
 </small></small>
