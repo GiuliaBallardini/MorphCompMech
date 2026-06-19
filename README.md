@@ -83,10 +83,17 @@ Analyses quantify relationships among morphological, compositional, and mechanic
 - Stepwise regression — Bidirectional stepwise linear regression is performed within each bootstrap iteration.
 - Predictor stability — Predictor importance is quantified using Bootstrap Inclusion Frequency (BIF), defined as the proportion of bootstrap iterations in which a predictor is retained.
 
+### Statistical framework
+- Non-parametric bootstrap resampling (B = 5,000, sampling with replacement).
+- Correlation coefficients reported as median bootstrap estimates.
+- Two-tailed p-values derived from bootstrap distributions.
+- Effect sizes interpreted using standard |r| thresholds.
+- Regression coefficients reported as median bootstrap estimates with 95% percentile confidence intervals.
+
 ### Usage
 1. Open MATLAB.
-2. Navigate to the repository directory
-3. Run the main script: `Analysis_Bootstrap_Correlation_StepwiseRegression.mat`
+2. Navigate to the repository directory.
+3. Run the main script: `Analysis_Bootstrap_Correlation_StepwiseRegression.mat`.
 4. Select a `.mat` dataset when prompted.
 
 Each `.mat` file should contain the following variables:
@@ -105,21 +112,29 @@ This repository includes synthetic example files in for testing the plotting and
 </small></small>
 
 ## Python-SPSS Analysis  
-General Linear Models evaluate differences across hair type, location, depth, and extraction time depending on dataset structure.
+Analyses evaluate differences across hair type, location, depth, and extraction time depending on experimental design.
 
 ### Workflow
-- Data selection — Select the `.xlsx` file to analyze. 
+- Data selection — Excel file `.xlsx` is loaded via file dialog. 
 - Sheet selection — Enter names of sheets for analysis.
-- Automated GLM analysis — Repeated measures run per sheet.
+- Automated GLM analysis — Repeated-measures or factorial GLMs are executed per sheet.
 - Output generation — Results exported as `.spv` (SPSS Viewer) and `.pdf` files in a selected folder.
 
+### Statistical framework
+- General Linear Models estimated in SPSS v29.0.
+- Estimated marginal means used for interaction effects.
+- Fisher's least significant difference (LSD) applied for pairwise comparisons.
+- Sphericity tested using Mauchly’s test (when applicable).
+- Greenhouse–Geisser correction applied when sphericity is violated.
+
 ### Usage
-1. Open SPSS and open the `{...}_Analysis.sps`. 
-2. Run the script (press `Ctrl + A`, then `Ctrl + R`)
-3. Choose the Excel file of the data to analyze `{...}_Data.xlsx` via a file dialog.
-4. Select an output folder for results via a file dialog.
-5. Enter the sheet names as they appear in the Excel file (comma-separated).
-6. Review results saved in the SPSS Viewer or in the exported PDF files (the file will be named after the sheet name).
+1. Open SPSS
+2. Open the `{...}_Analysis.sps`. 
+3. Run the script (press `Ctrl + A`, then `Ctrl + R`).
+4. Select input Excel file with the data to analyze `{...}_Data.xlsx`.
+5. Select output directory.
+6. Enter the sheet names as they appear in the Excel file (comma-separated).
+7. Review exported results (the file will be named after the sheet name).
 
 ### Factor Description and Included Dataset 
 
