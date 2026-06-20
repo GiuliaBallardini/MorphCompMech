@@ -1,5 +1,5 @@
 
- <h1 align="center">MinMechStats: Correlation Coefficient for Morphology-Mechanics-Elements</h1>
+ <h1 align="center">Correlation Analysis for Hair Morphology, Composition, and Mechanics</h1>
 
 <p align="center">
   <a href="https://is.mpg.de/person/ballardini"><strong>Giulia Ballardini</strong></a> ·
@@ -21,11 +21,11 @@
 Repository for quantitative analysis of hair morphology, composition, and mechanics.
 
 ## Overview
-This repository provides a reproducible workflow for the quantitative analysis of morphological, compositional, and mechanical properties of cat (Felis catus) hair, including whiskers, untreated body hair, and chemically treated body hair.
+This repository provides a reproducible workflow for the quantitative analysis of morphological, compositional, and mechanical properties of cat (*Felis catus*) hair, including whiskers, untreated body hair, and chemically treated body hair.
 
 The implementation supports the statistical analyses described in the associated manuscript, including generalized linear models (GLMs), non-parametric bootstrap resampling, correlation analysis, and stepwise regression with bootstrap inclusion frequency (BIF).
 
-💡 Tip: You can switch between [Light and Dark mode](https://github.com/settings/appearance) in your GitHub profile settings for better readability. This repo is designed to be viewed in Light mode.
+💡 Tip: You can switch between [Light and Dark modes](https://github.com/settings/appearance) in your GitHub profile settings for better readability. This repo is designed to be viewed in Light mode.
 
 ## Data
 
