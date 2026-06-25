@@ -1,18 +1,11 @@
 
- <h1 align="center">MinMechStats: Correlation Coefficient for Morphology-Mechanics-Minerals</h1>
+ <h1 align="center">Correlation Analysis for Hair Morphology, Composition, and Mechanics</h1>
 
 <p align="center">
   <a href="https://is.mpg.de/person/ballardini"><strong>Giulia Ballardini</strong></a> ·
   <a href="https://hi.is.mpg.de/person/aschulz"><strong>Andrew K. Schulz</strong></a>
 </p>
 
-<p align="center">
-  <a href="https://arxiv.org/abs/2504.07143">
-    <img src="https://img.shields.io/badge/arXiv-Preprint-B31B1B.svg" alt="arXiv Preprint">
-	  <a href="https://doi.org/10.17617/3.ROQPWZ">
-    <img src="https://img.shields.io/badge/Data%20Repository-Edmond-005BBB.svg" alt="Edmond Repository">
-  </a>
-</p>
  
  <p align="center">
   <img src="assets/CorrFigure.png" width="100%">
@@ -28,13 +21,21 @@
 Repository for quantitative analysis of hair morphology, composition, and mechanics.
 
 ## Overview
-This repository provides a comprehensive workflow for analyzing the morphological, compositional, and mechanical properties of various cat (*Felis catus*) hair samples, including whiskers, untreated, and chemical treated body hairs.
+This repository provides a reproducible workflow for the quantitative analysis of morphological, compositional, and mechanical properties of cat (*Felis catus*) hair, including whiskers, untreated body hair, and chemically treated body hair.
 
-For related data (e.g., indentation, TEM, SEM), please refer to the Edmond data repository (repository will be available upon paper acceptance). 
+The implementation supports the statistical analyses described in the associated manuscript, including generalized linear models (GLMs), non-parametric bootstrap resampling, correlation analysis, and stepwise regression with bootstrap inclusion frequency (BIF).
+
+💡 Tip: You can switch between [light and dark modes](https://github.com/settings/appearance) in your GitHub profile settings for better readability. This repo is designed to be viewed in light mode.
+
+## Data
+
+Related datasets (indentation, TEM, SEM, and chemical composition) are available via the Edmond data repository (link provided upon publication).
+
+This repository additionally includes synthetic datasets for reproducibility and testing of the full analysis pipeline without requiring access to unpublished experimental data.
 
 This repository includes:
-- MATLAB scripts for exploring relationships among morphological, mineral, and mechanical parameters doing a bootstrap of the methods reported in [Bala et al., 2011](https://www.sciencedirect.com/science/article/pii/S1751616111001196?casa_token=Wa4RIFd3AEQAAAAA:CsA3YNd1EJQKpA7qC8L3wAs4vqLc5vrTMEiSm2WxRmY1VI6cZdz-bQvbUyiXcXCAk8CRyCcCh5Y).
-- Python–SPSS integrated scripts for automated General Linear Model (GLM) repeated measures analyses.
+- MATLAB scripts for exploring relationships among morphological, compositional, and mechanical parameters using bootstrap methods adapted from those of [Bala et al., 2011](https://www.sciencedirect.com/science/article/pii/S1751616111001196?casa_token=Wa4RIFd3AEQAAAAA:CsA3YNd1EJQKpA7qC8L3wAs4vqLc5vrTMEiSm2WxRmY1VI6cZdz-bQvbUyiXcXCAk8CRyCcCh5Y).
+- Python–SPSS integrated scripts for automated general linear model (GLM) repeated measures analyses.
 
 The full implementation details are described in the associated paper (the link will be available upon paper acceptance). 
 
@@ -53,63 +54,80 @@ The full implementation details are described in the associated paper (the link 
 | Variable Names | Description | Units | Type of property |
 |----------|--------------|--------------|--------------|
 | Thickness | Cuticule wall thickness | µm | Morphological |
-| IF |  The amount of keratin intermediate filament in the hair cortex  | Area percent | Morphological |
-| Hollow | The amount of porous hollow in the hair cortex | Area percent | Morphological |
-| CEC | The amount of calcium-enriched capsules in the hair cortex | Area percent | Mineral |
-| Ca:S | The amount of Calcium compared to the amount of Sulfur in different individual CEC Percent | Unitless | Mineral |
+| IF |  The amount of keratin intermediate filaments (IFs) in the hair cortex  | Area percent | Compositional |
+| Null | The amount of porous hollow regions in the hair cortex | Area percent | Compositional |
+| CEC | The amount of calcium-enriched capsules (CECs) in the hair cortex | Area percent | Compositional |
+| Ca:S | The ratio of the amount of calcium compared to the amount of sulfur in different individual CECs | Unitless | Compositional |
 | E | Modulus of elasticity | GPa | Mechanical |
 | Hc | Hardness | GPa | Mechanical |
 
 </small></small>
 
-Note: In this repository we have utilized CEC as a variable name for CEC prevelence in the cortex of hair cross-sections. This is slightly different where CEC stands for calcium-enriched capsules. 
+Note: This repository uses "CEC" as a variable name for CEC prevelence in the cortex of hair cross sections. In the associated paper, CEC stands for calcium-enriched capsules. 
 
 ## MATLAB Analysis Pipeline
-Used for regression, correlation, and curve fitting analyses and visualization.
+Analyses quantify relationships among morphological, compositional, and mechanical variables across hair type (body hair, whisker) and location (base, tip).
 
 ### Workflow
-- Dataset Selection — User interactively selects one of the `.mat` datasets.
-- Normality Testing — Shapiro–Wilk test on each metric.
-- Correlation Analysis — Computes Pearson correlations between all metrics.
-- Visualization — Generates heatmaps of correlation matrices.
-- Stepwise Regression — Identifies predictors for each target metric.
+- Dataset selection — User interactively selects one of the `.mat` datasets.
+- Normality testing — Shapiro–Wilk tests are applied to each metric.
+- Bootstrap correlation analysis — Pearson correlation coefficients are computed across 5,000 bootstrap resamples (sampling with replacement). Final correlation values are defined as the median of the bootstrap distribution.
+- Visualization — Correlation matrices are visualized as heatmaps.
+- Stepwise regression — Bidirectional stepwise linear regression is performed within each bootstrap iteration.
+- Predictor stability — Predictor importance is quantified using bootstrap inclusion frequency (BIF), defined as the proportion of bootstrap iterations in which a predictor is retained.
+
+### Statistical framework
+- Non-parametric bootstrap resampling (B = 5,000, sampling with replacement).
+- Correlation coefficients reported as median bootstrap estimates.
+- Two-tailed p-values derived from bootstrap distributions.
+- Effect sizes interpreted using standard |r| thresholds.
+- Regression coefficients reported as median bootstrap estimates with 95% percentile confidence intervals.
 
 ### Usage
-1. Open MATLAB and navigate to the project folder.
-2. Run the main script: `Analysis_Bootstrap_Correlation_StepwiseRegression.mat`
-3. When prompted, select one of the provided `.mat` datasets (or your own dataset with the same structure).
+1. Open MATLAB.
+2. Navigate to the repository directory.
+3. Run the main script: `Analysis_Bootstrap_Correlation_StepwiseRegression.mat`. KJK: I think this line contains an error, as .mat is a datafile, not a script!
+4. Select a `.mat` dataset when prompted.
 
-Each `.mat` file should contain the following variables:
+The `.mat` file should contain the following variables:
 
 <small><small>
 
 | Variable | Description |
 |-----------|--------------|
-| `metrics` | Cell array containing the matrices. |
+| `metrics` | Cell array containing the matrices. KJK: Is "matrices" an error here? |
 | `names`   | Internal variable names corresponding to each metric (see Table above). |
-| `labels`  | Labels will be displayed in the plots and tables. |
+| `labels`  | Labels to be displayed in the plots and tables. |
 
 ### Included Datasets
-This repository includes synthetic example files in for testing the plotting and analysis workflow without requiring access to unpublished experimental data.
+This repository includes synthetic example files to allow testing of the plotting and analysis workflow without access to unpublished experimental data.
 
 </small></small>
 
 ## Python-SPSS Analysis  
-Used for GLM between different hair types and positions in the hair.
+Analyses evaluate differences across hair type, location, depth, and extraction time depending on experimental design.
 
 ### Workflow
-- Data Selection — Select the `.xlsx` file to analyze. 
-- Sheet Selection — Enter names of sheets for analysis.
-- Automated GLM Analysis — Repeated measures run per sheet.
-- Output Generation — Results exported as `.spv` (SPSS Viewer) and `.pdf` files in a selected folder.
+- Data selection — Excel file `.xlsx` is loaded via file dialog. 
+- Sheet selection — Enter names of sheets for analysis.
+- Automated GLM analysis — Repeated-measures or factorial GLMs are executed per sheet.
+- Output generation — Results exported as `.spv` (SPSS Viewer) and `.pdf` files in a selected folder.
+
+### Statistical framework
+- General linear models estimated in SPSS v29.0.
+- Estimated marginal means used for interaction effects.
+- Fisher's least significant difference (LSD) applied for pairwise comparisons.
+- Sphericity tested using Mauchly’s test (when applicable).
+- Greenhouse–Geisser correction applied when sphericity is violated.
 
 ### Usage
-1. Open SPSS and open the `{...}_Analysis.sps`. 
-2. Run the script (press `Ctrl + A`, then `Ctrl + R`)
-3. Choose the Excel file of the data to analyze `{...}_Data.xlsx` via a file dialog.
-4. Select an output folder for results via a file dialog.
-5. Enter the sheet names as they appear in the Excel file (comma-separated).
-6. Review results saved in the SPSS Viewer or in the exported PDF files (the file will be named after the sheet name).
+1. Open SPSS
+2. Open the `{...}_Analysis.sps`. 
+3. Run the script (press `Ctrl + A`, then `Ctrl + R`).
+4. Select input Excel file with the data to analyze `{...}_Data.xlsx`.
+5. Select output directory.
+6. Enter the sheet names as they appear in the Excel file (comma-separated).
+7. Review exported results (the file will be named after the sheet name).
 
 ### Factor Description and Included Dataset 
 
@@ -120,14 +138,14 @@ Used for GLM between different hair types and positions in the hair.
 | Depth | Indentation contact depth (nm) | 50, 100, 200, 400, 700 |
 | HairType | Domestic cat hair type | untreated body hair, whisker |
 | Position | Position along the hair length | base, tip |
-| Time | Shindai extraxtion time (h) | 0, 72, 120 |
+| Time | Shindai extraction time (h) | 0, 72, 120 |
 	
 | Dataset | Description | Analysis |
 |----------|--------------|--------------|
-| Morphological_Position_Data.xlsx | Morphological (thickness) and mineral (CEC, Ca:S) variables of untreated body hair and whiskers. | Difference between hair type and position. |
-| Mechanical_Depth_Data.xlsx | Mechanical variables (E, Hc) from indentation of untreated body hair and whiskers. | Difference between position and depth. |
-| Mineral_Time_Analysis.xlsx | Mineral variables (CEC, Ca:S) of treated hair after Shindai extraction. | Difference between position and time. |
-| Mechanical_Time_Data.xlsx | Mechanical variables (E, Hc) from indentation of treated hair after Shindai extraction. | Difference between position, time, and depth.|
+| Morphological_Position_SampleData.xlsx | Morphological (thickness) and compositional (CEC, Ca:S) variables of untreated body hair and whiskers. | Difference between hair type and position. |
+| Mechanical_Depth_SampleData.xlsx | Mechanical variables (E, Hc) from indentation of untreated body hair and whiskers. | Difference between position and depth. |
+| Mineral_Time_SampleData.xlsx | Compositional variables (CEC, Ca:S) of treated hair after Shindai extraction. KJK: I changed "Calcium-enrichment" to "Compositional" here and on the first line in this table. | Difference between position and time. |
+| Mechanical_Time_SampleData.xlsx | Mechanical variables (E, Hc) from indentation of treated hair after Shindai extraction. | Difference between position, time, and depth. |
 
 </small></small>
 
@@ -135,7 +153,7 @@ Used for GLM between different hair types and positions in the hair.
 Feel free to contact us if you need support. Our names and contact information are listed at the bottom of this page.
 
 ## Contributing
-Feel free to suggest improvements or report issues.
+Please suggest improvements or report issues.
 
 ## Notes
 If you encounter any problems or questions about specific parts of the codebase, don't hesitate to raise an issue. Always provide as much context as possible.
@@ -145,10 +163,10 @@ If you encounter any problems or questions about specific parts of the codebase,
 ```bibtex
 @misc{ballardini_minmechstats_2025,
 	address = {minmechstats},
-	title = {StatisticalAnalysis: Hairs contain calcium-enriched capsules that control their stiffness},
+	title = {Correlation Analysis for Hair Morphology, Composition, and Mechanics},
 	author = {Ballardini, Giulia and Schulz, Andrew K.},
-	howpublished = {Submitted},
-	year = {2025},
+	howpublished = {In preparation},
+	year = {2026},
 }
 
 ```
@@ -159,7 +177,9 @@ This project is licensed under the GNU GPL version 3 - see the [LICENSE](https:/
 
 ## Copyright
 
-© 2025, Max Planck Society 
+© 2026, Max Planck Society 
+
+Authors: Giulia Ballardini, Andrew K. Schulz
 
 ## Acknowledgements
 The authors thank the International Max Planck Research School for Intelligent Systems, [IMPRS-IS](https://imprs.is.mpg.de/) for supporting GB and AKS. We thank J. Burns and [J.-C. Passy](https://github.com/jcpassy) for their assistance in preparing the content for this GitHub. The authors thank N. Rokhmanova for her [ARIADNE repo](https://github.com/nrokh/ARIADNE) inspiring this ReadMe. Thanks to [Katherine J. Kuchenbecker](https://is.mpg.de/~kjk) for support and feedback.
