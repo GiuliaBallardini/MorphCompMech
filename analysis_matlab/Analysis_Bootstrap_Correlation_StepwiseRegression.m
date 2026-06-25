@@ -29,7 +29,7 @@
 %   A correlation heatmap figure.
 %
 % Dependencies:
-%   swtest.m  – Shapiro-Wilk test (available on MATLAB File Exchange).
+%   ShapiroWilkTest.m  – Shapiro-Wilk test (available on MATLAB File Exchange).
 %
 % -------------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ norm_p = zeros(1, n_metrics);   % pre-allocate p-value vector
 
 for i = 1:n_metrics
     % Flatten the full metric matrix to a column vector before testing
-    [~, norm_p(i)] = swtest(metrics{i}(:), 0.05);
+    [~, norm_p(i)] = ShapiroWilkTest(metrics{i}(:), 0.05);
 end
 
 %% --- 2. Bootstrap Pearson correlations ---
