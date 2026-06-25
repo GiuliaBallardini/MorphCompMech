@@ -86,7 +86,7 @@ Analyses quantify relationships among morphological, compositional, and mechanic
 ### Usage
 1. Open MATLAB.
 2. Navigate to the repository directory.
-3. Run the main script: `Analysis_Bootstrap_Correlation_StepwiseRegression.mat`. KJK: I think this line contains an error, as .mat is a datafile, not a script!
+3. Run the main script: `Analysis_Bootstrap_Correlation_StepwiseRegression.m`.
 4. Select a `.mat` dataset when prompted.
 
 The `.mat` file should contain the following variables:
@@ -95,7 +95,7 @@ The `.mat` file should contain the following variables:
 
 | Variable | Description |
 |-----------|--------------|
-| `metrics` | Cell array containing the matrices. KJK: Is "matrices" an error here? |
+| `metrics` | Cell array containing the matrices. |
 | `names`   | Internal variable names corresponding to each metric (see Table above). |
 | `labels`  | Labels to be displayed in the plots and tables. |
 
@@ -144,7 +144,7 @@ Analyses evaluate differences across hair type, location, depth, and extraction 
 |----------|--------------|--------------|
 | Morphological_Position_SampleData.xlsx | Morphological (thickness) and compositional (CEC, Ca:S) variables of untreated body hair and whiskers. | Difference between hair type and position. |
 | Mechanical_Depth_SampleData.xlsx | Mechanical variables (E, Hc) from indentation of untreated body hair and whiskers. | Difference between position and depth. |
-| Mineral_Time_SampleData.xlsx | Compositional variables (CEC, Ca:S) of treated hair after Shindai extraction. KJK: I changed "Calcium-enrichment" to "Compositional" here and on the first line in this table. | Difference between position and time. |
+| Mineral_Time_SampleData.xlsx | Compositional variables (CEC, Ca:S) of treated hair after Shindai extraction. | Difference between position and time. |
 | Mechanical_Time_SampleData.xlsx | Mechanical variables (E, Hc) from indentation of treated hair after Shindai extraction. | Difference between position, time, and depth. |
 
 </small></small>
@@ -182,7 +182,7 @@ This project is licensed under the GNU GPL version 3 - see the [LICENSE](https:/
 Authors: Giulia Ballardini, Andrew K. Schulz
 
 ## Acknowledgements
-The authors thank the International Max Planck Research School for Intelligent Systems, [IMPRS-IS](https://imprs.is.mpg.de/) for supporting GB and AKS. We thank J. Burns and [J.-C. Passy](https://github.com/jcpassy) for their assistance in preparing the content for this GitHub. The authors thank N. Rokhmanova for her [ARIADNE repo](https://github.com/nrokh/ARIADNE) inspiring this ReadMe. Thanks to [Katherine J. Kuchenbecker](https://is.mpg.de/~kjk) for support and feedback.
+The authors thank J. Burns and [J.-C. Passy](https://github.com/jcpassy) for their assistance in preparing the content for this GitHub. The authors thank N. Rokhmanova for her [ARIADNE repo](https://github.com/nrokh/ARIADNE) inspiring this ReadMe. Thanks to [Katherine J. Kuchenbecker](https://is.mpg.de/~kjk) for support and feedback.
 
 ## Contact
 This code repository was implemented by [Giulia Ballardini](https://github.com/GiuliaBallardini) and [Andrew K. Schulz](https://github.com/Aschulz94).
