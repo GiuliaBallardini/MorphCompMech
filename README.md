@@ -56,14 +56,14 @@ The full implementation details are described in the associated paper (the link 
 | Thickness | Cuticule wall thickness | µm | Morphological |
 | IF |  The amount of keratin intermediate filaments (IFs) in the hair cortex  | Area percent | Compositional |
 | Null | The amount of porous hollow regions in the hair cortex | Area percent | Compositional |
-| CEC | The amount of calcium-enriched capsules (CECs) in the hair cortex | Area percent | Compositional |
-| Ca:S | The ratio of the amount of calcium compared to the amount of sulfur in different individual CECs | Unitless | Compositional |
+| CEG | The amount of calcium-enriched granules (CEGs) in the hair cortex | Area percent | Compositional |
+| Ca:S | The ratio of the amount of calcium compared to the amount of sulfur in different individual CEGs | Unitless | Compositional |
 | E | Modulus of elasticity | GPa | Mechanical |
 | Hc | Hardness | GPa | Mechanical |
 
 </small></small>
 
-Note: This repository uses "CEC" as a variable name for CEC prevelence in the cortex of hair cross sections. In the associated paper, CEC stands for calcium-enriched capsules. 
+Note: This repository uses "CEG" as a variable name for CEG prevelence in the cortex of hair cross sections. In the associated paper, CEG stands for calcium-enriched granules. 
 
 ## MATLAB Analysis Pipeline
 Analyses quantify relationships among morphological, compositional, and mechanical variables across hair type (body hair, whisker) and location (base, tip).
@@ -142,9 +142,9 @@ Analyses evaluate differences across hair type, location, depth, and extraction 
 	
 | Dataset | Description | Analysis |
 |----------|--------------|--------------|
-| Morphological_Position_SampleData.xlsx | Morphological (thickness) and compositional (CEC, Ca:S) variables of untreated body hair and whiskers. | Difference between hair type and position. |
+| Morphological_Position_SampleData.xlsx | Morphological (thickness) and compositional (CEG, Ca:S) variables of untreated body hair and whiskers. | Difference between hair type and position. |
 | Mechanical_Depth_SampleData.xlsx | Mechanical variables (E, Hc) from indentation of untreated body hair and whiskers. | Difference between position and depth. |
-| Mineral_Time_SampleData.xlsx | Compositional variables (CEC, Ca:S) of treated hair after Shindai extraction. | Difference between position and time. |
+| Mineral_Time_SampleData.xlsx | Compositional variables (CEG, Ca:S) of treated hair after Shindai extraction. | Difference between position and time. |
 | Mechanical_Time_SampleData.xlsx | Mechanical variables (E, Hc) from indentation of treated hair after Shindai extraction. | Difference between position, time, and depth. |
 
 </small></small>
