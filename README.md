@@ -8,7 +8,7 @@
 
  
  <p align="center">
-  <img src="assets/CorrFigure.png" width="100%">
+  <img src="assets/GitHUbHeader_GB.png" width="100%">
 </p>
 
 
