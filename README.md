@@ -1,5 +1,5 @@
 
- <h1 align="center">Correlation Analysis for Hair Morphology, Composition, and Mechanics</h1>
+ <h1 align="center">MorphCompMech: Correlation Analysis for Hair Morphology, Composition, and Mechanics</h1>
 
 <p align="center">
   <a href="https://is.mpg.de/person/ballardini"><strong>Giulia Ballardini</strong></a> ·
