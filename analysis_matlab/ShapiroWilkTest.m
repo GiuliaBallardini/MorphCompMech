@@ -93,20 +93,20 @@ if kurtosis(x) > 3
     % Better power for leptokurtic (heavy-tailed) distributions.
     % =====================================================================
 
-    % Weights: normalised expected order statistics  [2, p. 182]
+    % Weights: normalized expected order statistics  [2, p. 182]
     weights = mtilde / sqrt(mtilde' * mtilde);
 
     % W' statistic  [2, p. 182]
     W = (weights' * x)^2 / sum((x - mean(x)).^2);
 
-    % Normalising transformation for W'  [2, p. 183]
+    % Normalizing transformation for W'  [2, p. 183]
     nu    = log(n);
     u1    = log(nu) - nu;
     u2    = log(nu) + 2 / nu;
     mu    = -1.2725 + 1.0521 * u1;
     sigma =  1.0308 - 0.26758 * u2;
 
-    % Normalised statistic and p-value (upper tail)  [2, p. 183]
+    % Normalized statistic and p-value (upper tail)  [2, p. 183]
     z      = (log(1 - W) - mu) / sigma;
     pValue = 1 - normcdf(z);
 
@@ -121,9 +121,9 @@ else
     %
     % The two extreme weights a(n) and a(n-1) are corrected via polynomial
     % approximations fitted by Royston (1992, p.117) and (1993b, p.38).
-    % The remaining weights follow from the normalisation constraint.
+    % The remaining weights follow from the normalization constraint.
 
-    c = mtilde / sqrt(mtilde' * mtilde);  % normalised order stats
+    c = mtilde / sqrt(mtilde' * mtilde);  % normalized order stats
     u = 1 / sqrt(n);                      % convenient shorthand
 
     % Polynomial coefficients from Royston (1992, p.117) and (1993b, p.38)
@@ -142,7 +142,7 @@ else
         phi = 1;
 
     elseif n <= 5
-        % Only the outermost pair is corrected; phi normalises the rest
+        % Only the outermost pair is corrected; phi normalizes the rest
         weights(n-1) =  polyval(pc2, u);
         weights(2)   = -weights(n-1);
         phi = (mtilde'*mtilde ...
@@ -152,7 +152,7 @@ else
         weights(3) = mtilde(3) / sqrt(phi);   % only one middle element
 
     else
-        % n >= 6: two outermost pairs corrected; middle block normalised
+        % n >= 6: two outermost pairs corrected; middle block normalized
         weights(n-1) =  polyval(pc2, u);
         weights(2)   = -weights(n-1);
         phi = (mtilde'*mtilde ...
@@ -165,7 +165,7 @@ else
     % -- W statistic  [5, eq.1] -------------------------------------------
     W = (weights' * x)^2 / sum((x - mean(x)).^2);
 
-    % -- Normalising transformation and p-value ---------------------------
+    % -- Normalizing transformation and p-value ---------------------------
     %
     % Three separate approximations depending on sample size,
     % from Royston (1992, p.118) and (1993b, p.40, Table 1).
