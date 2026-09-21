@@ -2,12 +2,12 @@
 %   1. Tests each metric for normality (Shapiro-Wilk test).
 %   2. Estimates pairwise Pearson correlations via bootstrapping, with
 %      95% percentile confidence intervals and two-tailed p-values.
-%   3. Visualises the correlation matrix as a colour-coded heatmap,
+%   3. Visualizes the correlation matrix as a color-coded heatmap,
 %      with significant entries (p < 0.05) displayed in bold.
 %   4. Runs a two-stage bootstrap stepwise regression for each metric:
 %        Stage 1 – Bootstrap Inclusion Frequency (BIF) to identify
 %                  stable predictors (BIF > 50%).
-%        Stage 2 – Percentile CIs on standardised betas for stable
+%        Stage 2 – Percentile CIs on standardized betas for stable
 %                  predictors only.
 %
 % Input:
@@ -23,7 +23,7 @@
 %     - Normality p-values (Shapiro-Wilk).
 %     - Pairwise correlation coefficients with 95% CIs and p-values.
 %     - BIF tables per response metric.
-%     - Standardised beta tables for stable predictors.
+%     - Standardized beta tables for stable predictors.
 %   results  – struct; one field per metric containing BIF, betas, CIs,
 %              and quality flags.
 %   A correlation heatmap figure.
@@ -127,7 +127,7 @@ for i = 1:n_metrics
     end
 end
 
-% Visualise correlation matrix (bold = p < 0.05)
+% Visualize correlation matrix (bold = p < 0.05)
 plot_correlation_map_bold(corr_r, [-1 1], labels, ...
     'Pearson correlation coefficient', false, corr_p)
 
@@ -140,10 +140,10 @@ plot_correlation_map_bold(corr_r, [-1 1], labels, ...
 %     iterations in which each predictor is retained estimates its BIF.
 %     Predictors with BIF > threshold are considered "stable".
 %
-%   Stage 2 – Standardised beta estimation (stable predictors only)
+%   Stage 2 – Standardized beta estimation (stable predictors only)
 %     Fits OLS on z-scored data for each bootstrap sample.  Percentile
 %     CIs (2.5–97.5%) are computed from the bootstrap distribution of
-%     standardised betas. Degenerate distributions are flagged.
+%     standardized betas. Degenerate distributions are flagged.
 
 rng(42);            % fixed seed for reproducibility
 threshold = 0.50;   % BIF threshold to declare a predictor "stable"
@@ -234,7 +234,7 @@ for i = 1:n_metrics
     fprintf('%s ', stable_names{:});
     fprintf('\n');
 
-    %% Stage 2: Percentile CI on standardised betas
+    %% Stage 2: Percentile CI on standardized betas
     n_stable = length(stable_idx);
     n_betas  = n_stable + 1;          % +1 for intercept (not reported)
     boot_b   = NaN(n_boot, n_betas);  % % pre-allocate; NaN = failed iter
@@ -298,7 +298,7 @@ for i = 1:n_metrics
     end
 
     % Print beta table
-    fprintf('\n  Standardised betas [95%% percentile CI] — exploratory:\n');
+    fprintf('\n  Standardized betas [95%% percentile CI] — exploratory:\n');
     fprintf('  %-20s  %7s  %7s  %7s  %s\n', ...
         'Predictor', 'beta', 'CI_lo', 'CI_hi', 'Note');
     fprintf('  %s\n', repmat('-', 1, 60));
@@ -360,10 +360,10 @@ function plot_correlation_map_bold(temp, var_limit, labels, plot_title, showDiag
 %   Parameters
 %   ----------
 %   temp       : n×n correlation matrix
-%   var_limit  : [min max] colour scale limits (e.g. [-1 1])
+%   var_limit  : [min max] color scale limits (e.g. [-1 1])
 %   labels     : 1×n cell array of axis tick labels
 %   plot_title : string; figure title
-%   showDiag   : logical; if false, diagonal cells are greyed out (default: true)
+%   showDiag   : logical; if false, diagonal cells are grayed out (default: true)
 %   corr_p     : n×n p-value matrix; entries with p < 0.05 are bolded.
 %                Omit or pass [] to disable bold formatting.
 
@@ -414,7 +414,7 @@ imagesc(temp_masked, var_limit);
 colormap(cmap);
 colorbar;
 
-% Grey out NaN (diagonal) cells
+% Gray out NaN (diagonal) cells
 hold on;
 for r = 1:n
     for c = 1:n
@@ -429,7 +429,7 @@ end
 for r = 1:n
     for c = 1:n
         if nanMask(r,c)
-            continue; % skip greyed-out cells
+            continue; % skip grayed-out cells
         end
 
         val = temp_plot(r,c);
