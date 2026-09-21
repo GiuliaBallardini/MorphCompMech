@@ -162,11 +162,12 @@ If you encounter any problems or questions about specific parts of the codebase,
 > 
 ```bibtex
 @misc{ballardini_MorphCompMech_2026,
-	address = {https://github.com/GiuliaBallardini/MorphCompMech},
 	title = {Correlation Analysis for Hair Morphology, Composition, and Mechanics},
 	author = {Ballardini, Giulia and Schulz, Andrew K.},
-	howpublished = {In preparation},
 	year = {2026},
+	howpublished = {GitHub repository},
+	url = {https://github.com/GiuliaBallardini/MorphCompMech},
+	note = {Manuscript in preparation}
 }
 
 ```
