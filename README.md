@@ -174,7 +174,7 @@ If you encounter any problems or questions about specific parts of the codebase,
 
 
 ## Licence
-This project is licensed under the GNU GPL version 3 - see the [LICENSE](https://github.com/LawSmith408/WhiskerAnalyses/blob/main/LICENSEd) file for details.
+This project is licensed under the GNU GPL version 3 - see the [LICENSE](https://github.com/GiuliaBallardini/MorphCompMech/blob/main/LICENSE) file for details.
 
 ## Copyright
 
