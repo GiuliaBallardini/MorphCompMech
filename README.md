@@ -53,7 +53,7 @@ The full implementation details are described in the associated paper (the link 
 
 | Variable Names | Description | Units | Type of property |
 |----------|--------------|--------------|--------------|
-| Thickness | Cuticule wall thickness | µm | Morphological |
+| Thickness | Cuticle wall thickness | µm | Morphological |
 | IF |  The amount of keratin intermediate filaments (IFs) in the hair cortex  | Area percent | Compositional |
 | Null | The amount of porous hollow regions in the hair cortex | Area percent | Compositional |
 | CEG | The amount of calcium-enriched granules (CEGs) in the hair cortex | Area percent | Compositional |
@@ -63,7 +63,7 @@ The full implementation details are described in the associated paper (the link 
 
 </small></small>
 
-Note: This repository uses "CEG" as a variable name for CEG prevelence in the cortex of hair cross sections. In the associated paper, CEG stands for calcium-enriched granules. 
+Note: This repository uses "CEG" as a variable name for CEG prevalence in the cortex of hair cross sections. In the associated paper, CEG stands for calcium-enriched granules. 
 
 ## MATLAB Analysis Pipeline
 Analyses quantify relationships among morphological, compositional, and mechanical variables across hair type (body hair, whisker) and location (base, tip).
@@ -101,6 +101,13 @@ The `.mat` file should contain the following variables:
 
 ### Included Datasets
 This repository includes synthetic example files to allow testing of the plotting and analysis workflow without access to unpublished experimental data.
+
+| Dataset | Description |
+|---------|-------------|
+| `SampleDataFig2_Table1.mat` | Synthetic example data corresponding to the analysis of Fig. 2 and Table 1 in the associated manuscript. |
+| `SampleDataFig5_Table3-4.mat` | Synthetic example data corresponding to the analysis of Fig. 5 and Tables 3 and 4 in the associated manuscript. |
+
+Both files are located in `analysis_matlab/` and follow the `.mat` structure described above.
 
 </small></small>
 
@@ -158,8 +165,6 @@ Please suggest improvements or report issues.
 ## Notes
 If you encounter any problems or questions about specific parts of the codebase, don't hesitate to raise an issue. Always provide as much context as possible.
 
- > 
-> 
 ```bibtex
 @misc{ballardini_MorphCompMech_2026,
 	title = {Correlation Analysis for Hair Morphology, Composition, and Mechanics},
@@ -169,11 +174,9 @@ If you encounter any problems or questions about specific parts of the codebase,
 	url = {https://github.com/GiuliaBallardini/MorphCompMech},
 	note = {Manuscript in preparation}
 }
-
 ```
 
-
-## Licence
+## License
 This project is licensed under the GNU GPL version 3 - see the [LICENSE](https://github.com/GiuliaBallardini/MorphCompMech/blob/main/LICENSE) file for details.
 
 ## Copyright
