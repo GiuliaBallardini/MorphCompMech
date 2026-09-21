@@ -136,7 +136,7 @@ Analyses evaluate differences across hair type, location, depth, and extraction 
 | Variable | Description | Values of variable |
 |----------|--------------|--------------|
 | Depth | Indentation contact depth (nm) | 50, 100, 200, 400, 700 |
-| HairType | Domestic cat hair type | untreated body hair, whisker |
+| HairType | Domestic cat hair type | body hair, whisker |
 | Position | Position along the hair length | base, tip |
 | Time | Shindai extraction time (h) | 0, 72, 120 |
 	
@@ -161,8 +161,8 @@ If you encounter any problems or questions about specific parts of the codebase,
  > 
 > 
 ```bibtex
-@misc{ballardini_minmechstats_2025,
-	address = {minmechstats},
+@misc{ballardini_MorphCompMech_2026,
+	address = {morphcompmech},
 	title = {Correlation Analysis for Hair Morphology, Composition, and Mechanics},
 	author = {Ballardini, Giulia and Schulz, Andrew K.},
 	howpublished = {In preparation},
