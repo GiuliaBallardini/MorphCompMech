@@ -172,7 +172,7 @@ If you encounter any problems or questions about specific parts of the codebase,
 	year = {2026},
 	howpublished = {GitHub repository},
 	url = {https://github.com/GiuliaBallardini/MorphCompMech},
-	note = {Manuscript in preparation}
+	note = {Manuscript on arXiv - https://arxiv.org/abs/2607.22023}
 }
 ```
 
